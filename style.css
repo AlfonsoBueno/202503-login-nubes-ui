@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Inder&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    font-family:"Poppins", sans-serif, system-ui,-apple-system, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;     
+    font-size: 16px;
+    color:#fff;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    position: relative;
+    width: 70%;
+    padding: 2rem;
+    max-width: 1100px;
+    height: 600px;
+    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.6);
+    background: url("./image/nubes.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.textoBienvenida{
+    margin-top: auto;   
+}
+
+.container h1 {
+    margin-left: -0.2rem;
+    font-size: 2.5rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    margin-bottom:-0.7rem;
+    animation: fadeInCard 1s ease-in-out;
+}
+
+.container h3 {
+    margin-left: -0.2rem;
+    font-size: 1.3rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    margin-bottom: -0.5rem;
+    animation: fadeInCard 1s ease-in-out;
+}
+
+
+.container p {
+    opacity: 0;
+    width: 50%;
+    color: #fff;
+    letter-spacing: 0.1rem;
+    margin-top: 1rem;
+    font-weight: 200;
+    font-size: 0.8rem;
+    animation: fadeInCard 0.8s ease-in-out forwards;
+    animation-delay: 0.5s;
+}
+
+.card {
+    position: absolute;
+    opacity: 0;
+    width: 330px;
+    height: 65%;
+    right:2rem;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    background-image: linear-gradient(120deg,rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.2));
+    border-radius: 0px 3px 3px 0px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+    padding: 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    z-index: 100;   
+    will-change: transform, opacity;
+    animation: fadeLeft 1s ease-in 1s both;
+}
+
+@keyframes fadeLeft {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+
+    }
+}
+
+/* Formulario */
+.field,.remember {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+
+}
+
+.field label {
+    font-size: 1rem;
+    color: #fff;
+    letter-spacing: 0.1rem;
+    margin-bottom: 0.5rem;
+    margin-left: 0.8rem ;
+}
+
+.field input {
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 0;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    outline: none;
+    &::placeholder{
+        color:#ddd;
+    }
+}
+
+.remember label{
+    width: 109%;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 0.8rem;
+    font-weight: 300;
+    gap: 0.3rem;
+    margin-left: 1rem;
+
+}
+
+.field .btn_submit {
+    width: 100%;
+    border-radius: 25px;
+    background: #002f59;
+    border: 0;
+    color: #fff;
+    padding: 0.6rem 0rem;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+    outline: none;
+
+    &:hover{
+        background-color:#004c8f;
+    }
+}
+
+.cuentas{
+    width: 100%;
+    font-size: 0.8rem;
+    font-weight: 200;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-around;
+
+    a{
+        color:#fff;
+        text-decoration: none;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
+
+@keyframes fadeInCard {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+}
+
+
+@media(width<1000px)    {
+    .container{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .card{
+        width: 70%;
+        max-width: 500px;
+    }
+}
+
+
+@media(width<690px)    {
+
+    .container{
+        width: 100%;
+        height: 100vh;
+        justify-content: flex-start;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding: 1rem;
+    }
+
+    .textoBienvenida{
+        
+        margin-top: 0;
+        align-items: center;
+        p{
+            width: 100%;
+        }
+    }
+
+    .card{
+        width: 100%;
+        opacity: 1;
+        position: relative;
+        right: 0;
+        height: auto;
+        align-self: center;
+        }
+
+}
